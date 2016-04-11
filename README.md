@@ -51,8 +51,11 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
 1. run the demo using the matlab code `run_demo.m` or the python code `run_demo.py`.
 2. find the final result in the folder `./pred/final/`. either in .mat format (for matlab) or .csv format (for python).
 
-### Train & Reproduce results on THUMOS Challenge 2014 action detection task:
-0. Download the example scripts and files to `./experiments/`: either from [Dropbox]() or [baiduyun]()
+### Pre-computed results of S-CNN on THUMOS Challenge 2014 action detection task:
+0. 
+
+### Train your own model
+0. Please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model
 1. 
 
 
