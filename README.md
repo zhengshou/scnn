@@ -50,6 +50,21 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
 0. change to demo directory: `cd ./demo/`.
 1. run the demo using the matlab code `run_demo.m` or the python code `run_demo.py`.
 2. find the final result in the folder `./pred/final/`. either in .mat format (for matlab) or .csv format (for python).
+    - Note for the meaning of in seg_swin. Each row stands for one candidate segment. As for each column: 
+        * 1: video name in THUMOS14 test set
+        * 2: sliding window length measured by number of frames
+        * 3: start frame index
+        * 4: end frame index
+        * 5: start time
+        * 6: end time
+        * 9: confidence score of being the class indicated in the column 11
+        * 10: confidence score of being action/non-background
+        * 11: the predicted action class (from the 20 action classes and the background)
+        * 12: sliding window overlap. all 0.25. means using 75% overlap window.
+    - Note for the meaning of res: 
+        * this matrix represents the confidence score on each frame per each class
+        * column corresponds to each frame and row corresponds to each action class
+        * the size of this matrix: the number of action classes (20 here) by the number of frames
 
 ### Our pre-trained models and pre-computed results of S-CNN on THUMOS Challenge 2014 action detection task:
 0. Models:
@@ -58,15 +73,7 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
     - `./models/THUMOS14/classification/snapshot/SCNN_uniform16_cls20_iter_30000`: our trained S-CNN classification network; 
     - `./models/THUMOS14/localization/snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000`: our trained S-CNN localization network.
 1. Results:
-    - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: contains the output results of the proposal network; 
-    - Note for the meaning of each column in the following res_seg_swin.mat: 
-        * 1: video name in THUMOS14 test set
-        * 3: start frame index
-        * 4: end frame index
-        * 5: start time
-        * 6: end time
-        * 10: confidence score of being action
-        * 12: sliding window overlap. all 0.25. means 75% overlap window.
+    - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: contains the output results of the proposal network;
     - `./experiments/THUMOS14/network_localization/result/res_seg_swin.mat`: contains the output results of the localization network;
     - evaluate mAP: run `./experiments/THUMOS14/eval/eval_scnn_thumos14.m` and results are stored in `./experiments/THUMOS14/eval/res_scnn_thumos14.mat`.
 
