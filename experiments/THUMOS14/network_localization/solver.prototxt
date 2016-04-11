@@ -1,0 +1,20 @@
+train_net: "train.prototxt"
+test_net: "test.prototxt"
+test_iter: 7341
+test_interval: 5000
+base_lr: 0.0001
+momentum: 0.9
+weight_decay: 0.0005
+lr_policy: "step"
+gamma: 0.5
+stepsize: 5000
+# Display every 200 iterations
+display: 200
+# The maximum number of iterations
+max_iter: 30000
+# snapshot intermediate results
+snapshot: 5000
+snapshot_prefix: "snapshot/SCNN_uniform16_cls20_with_overlap_loss"
+# solver mode: CPU or GPU
+solver_mode: GPU
+device_id: 0

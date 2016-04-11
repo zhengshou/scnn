@@ -1,0 +1,1 @@
+GLOG_logtosterr=1 ../../../C3D_overlap_loss/build/tools/extract_image_features.bin finetuning_feature_extract.prototxt ../../../models/THUMOS14/localization/snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000 0 2 100000 demo_list_test_prefix_localization.lst prob 2>demo_extract.log
