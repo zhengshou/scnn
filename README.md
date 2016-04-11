@@ -73,16 +73,23 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
     - `./models/THUMOS14/classification/snapshot/SCNN_uniform16_cls20_iter_30000`: our trained S-CNN classification network; 
     - `./models/THUMOS14/localization/snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000`: our trained S-CNN localization network.
 1. Results:
-    - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: contains the output results of the proposal network;
+    - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: contains the output results of the proposal network. we keep segment whose confidence score of being action >= 0.7 as the candidate segment to further input into the following localization network;
     - `./experiments/THUMOS14/network_localization/result/res_seg_swin.mat`: contains the output results of the localization network;
-    - evaluate mAP: run `./experiments/THUMOS14/eval/eval_scnn_thumos14.m` and results are stored in `./experiments/THUMOS14/eval/res_scnn_thumos14.mat`.
+    - evaluate mAP: run `./experiments/THUMOS14/eval/eval_scnn_thumos14.m` and results are stored in `./experiments/THUMOS14/eval/res_scnn_thumos14.mat`. we vary the overlap threshold IoU used in evaluation from 0.1 to 0.5
 
 ### Train your own model
-0. Please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model.
-1. 
-
-
-
+0. We provide the parameter settings and the network architecture definition inside `./experiments/THUMOS14/network_proposal/`, `./experiments/THUMOS14/network_classification/`, `./experiments/THUMOS14/network_localization/` respectively.
+1. We also provide sample input data file to illustrate input data file list format, which is slightly different from C3D:
+    - still, each row corresponds to one input segment
+    - C3D_sample_rate (used for proposal and classification network): 
+        * format: video_frame_directory start_frame_index class_label stepsize
+        * stepsize: used for adjusting the window length. measure the step between two consecutive frames in one segment. the frame index of the current frame + stepsize = the frame index of the subsequent frame. note that each segment consists of 16 frames in total.
+        * example: `/dataset/THUMOS14/val/validation_frm_all/video_validation_0000051/ 2561 3 8` 
+    - C3D_overlap_loss (used for localization network):
+        * format: video_frame_directory start_frame_index class_label stepsize overlap
+        * overlap: the overlap measured by IoU between the candidate segment and the corresponding ground truth segment
+        * example: `/dataset/THUMOS14/val/validation_frm_all/video_validation_0000051/ 2561 3 8 0.70701`
+2. NOTE:please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model.
 
 
 
