@@ -44,18 +44,26 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
     - Compile C3D_sample_rate, which is used for the proposal network and classification network
     - Compile C3D_overlap_loss, which is used for the localization network
     - Hint: please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more details about compilation
-2. Download pre-trained models to `./models/`: either from [Dropbox](https://www.dropbox.com/s/657cuo60xg41zln/models.7z?dl=0) or [baiduyun](http://pan.baidu.com/s/1o8AHrUa)
+2. Download pre-trained models to `./models/`: either from [Dropbox](https://www.dropbox.com/s/657cuo60xg41zln/models.7z?dl=0) or [Baiduyun](http://pan.baidu.com/s/1o8AHrUa)
 
 ### Run demo:
 0. change to demo directory: `cd ./demo/`.
 1. run the demo using the matlab code `run_demo.m` or the python code `run_demo.py`.
 2. find the final result in the folder `./pred/final/`. either in .mat format (for matlab) or .csv format (for python).
 
-### Pre-computed results of S-CNN on THUMOS Challenge 2014 action detection task:
-0. 
+### Our pre-trained models and pre-computed results of S-CNN on THUMOS Challenge 2014 action detection task:
+0. Models:
+    - `./models/conv3d_deepnetA_sport1m_iter_1900000`: C3D model pre-trained on Sports1M dataset by Tran et al;
+    - `./models/THUMOS14/proposal/snapshot/SCNN_uniform16_binary_iter_30000`: our trained S-CNN proposal network; 
+    - `./models/THUMOS14/classification/snapshot/SCNN_uniform16_cls20_iter_30000`: our trained S-CNN classification network; 
+    - `./models/THUMOS14/localization/snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000`: our trained S-CNN localization network;
+1. Results:
+    - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: our trained S-CNN proposal network; 
+    - `./experiments/THUMOS14/network_localization/result/res_seg_swin.mat`: our trained S-CNN localization network;
+    - evaluate mAP: run `./experiments/THUMOS14/eval/eval_scnn_thumos14.m` and results are stored in `./experiments/THUMOS14/eval/res_scnn_thumos14.mat`.
 
 ### Train your own model
-0. Please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model
+0. Please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model.
 1. 
 
 
