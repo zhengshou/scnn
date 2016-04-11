@@ -59,10 +59,15 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
     - `./models/THUMOS14/localization/snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000`: our trained S-CNN localization network.
 1. Results:
     - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: contains the output results of the proposal network; 
+    - Note for the meaning of each column in the following res_seg_swin.mat: 
+        * 1: video name in THUMOS14 test set
+        * 3: start frame index
+        * 4: end frame index
+        * 5: start time
+        * 6: end time
+        * 10: confidence score of being action
+        * 12: sliding window overlap. all 0.25. means 75% overlap window.
     - `./experiments/THUMOS14/network_localization/result/res_seg_swin.mat`: contains the output results of the localization network;
-    - NOTE: 
-        * f
-        * 
     - evaluate mAP: run `./experiments/THUMOS14/eval/eval_scnn_thumos14.m` and results are stored in `./experiments/THUMOS14/eval/res_scnn_thumos14.mat`.
 
 ### Train your own model
