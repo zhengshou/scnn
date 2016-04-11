@@ -89,7 +89,7 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
         * format: video_frame_directory start_frame_index class_label stepsize overlap
         * overlap: the overlap measured by IoU between the candidate segment and the corresponding ground truth segment
         * example: `/dataset/THUMOS14/val/validation_frm_all/video_validation_0000051/ 2561 3 8 0.70701`
-2. NOTE:please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model.
+2. NOTE: please refer to [C3D](https://github.com/facebook/C3D) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model.
 
 
 
