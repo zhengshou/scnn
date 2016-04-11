@@ -56,10 +56,13 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
     - `./models/conv3d_deepnetA_sport1m_iter_1900000`: C3D model pre-trained on Sports1M dataset by Tran et al;
     - `./models/THUMOS14/proposal/snapshot/SCNN_uniform16_binary_iter_30000`: our trained S-CNN proposal network; 
     - `./models/THUMOS14/classification/snapshot/SCNN_uniform16_cls20_iter_30000`: our trained S-CNN classification network; 
-    - `./models/THUMOS14/localization/snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000`: our trained S-CNN localization network;
+    - `./models/THUMOS14/localization/snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000`: our trained S-CNN localization network.
 1. Results:
-    - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: our trained S-CNN proposal network; 
-    - `./experiments/THUMOS14/network_localization/result/res_seg_swin.mat`: our trained S-CNN localization network;
+    - `./experiments/THUMOS14/network_proposal/result/res_seg_swin.mat`: contains the output results of the proposal network; 
+    - `./experiments/THUMOS14/network_localization/result/res_seg_swin.mat`: contains the output results of the localization network;
+    - NOTE: 
+        * f
+        * 
     - evaluate mAP: run `./experiments/THUMOS14/eval/eval_scnn_thumos14.m` and results are stored in `./experiments/THUMOS14/eval/res_scnn_thumos14.mat`.
 
 ### Train your own model
