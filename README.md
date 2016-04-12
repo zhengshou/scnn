@@ -50,7 +50,7 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
 0. change to demo directory: `cd ./demo/`.
 1. run the demo using the matlab code `run_demo.m` or the python code `run_demo.py`.
 2. find the final result in the folder `./pred/final/`. either in .mat format (for matlab) or .csv format (for python).
-    - Note for the meaning of in seg_swin. Each row stands for one candidate segment. As for each column: 
+    - Note for the meaning of in `seg_swin`. Each row stands for one candidate segment. As for each column: 
         * 1: video name in THUMOS14 test set
         * 2: sliding window length measured by number of frames
         * 3: start frame index
@@ -61,7 +61,7 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
         * 10: confidence score of being action/non-background
         * 11: the predicted action class (from the 20 action classes and the background)
         * 12: sliding window overlap. all 0.25. means using 75% overlap window.
-    - Note for the meaning of res: 
+    - Note for the meaning of `res`: 
         * this matrix represents the confidence score on each frame per each class
         * column corresponds to each frame and row corresponds to each action class
         * the size of this matrix: the number of action classes (20 here) by the number of frames
@@ -77,7 +77,7 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
     - `./experiments/THUMOS14/network_localization/result/res_seg_swin.mat`: contains the output results of the localization network;
     - evaluate mAP: run `./experiments/THUMOS14/eval/eval_scnn_thumos14.m` and results are stored in `./experiments/THUMOS14/eval/res_scnn_thumos14.mat`. we vary the overlap threshold IoU used in evaluation from 0.1 to 0.5
 
-### Train your own model
+### Train your own model:
 0. We provide the parameter settings and the network architecture definition inside `./experiments/THUMOS14/network_proposal/`, `./experiments/THUMOS14/network_classification/`, `./experiments/THUMOS14/network_localization/` respectively.
 1. We also provide sample input data file to illustrate input data file list format, which is slightly different from C3D:
     - still, each row corresponds to one input segment
