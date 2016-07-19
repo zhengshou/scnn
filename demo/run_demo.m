@@ -174,7 +174,7 @@ tic;
 seg_swin=seg_swin(seg_swin(:,11)~=0,:);
 
 % refine score via window length weights
-load('../experiments/THUMOS14/win_weight/weight.mat');
+load('../experiments/THUMOS14/window_weight/weight.mat');
 for i=1:length(seg_swin)
     seg_swin(i,9)=seg_swin(i,9).*weight(log2(seg_swin(i,2)/16)+1,seg_swin(i,11));
 end
