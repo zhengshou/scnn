@@ -163,7 +163,7 @@ def main():
     seg_swin = new_seg_swin
 
     # refine score via window length weights
-    wfile = open('../experiments/THUMOS14/win_weight/weight.csv', 'rb')
+    wfile = open('../experiments/THUMOS14/window_weight/weight.csv', 'rb')
     weight = [[float(i) for i in row] for row in list(csv.reader(wfile))]
     wfile.close()
     for row in seg_swin:
