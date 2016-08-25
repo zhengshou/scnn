@@ -61,7 +61,7 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
         * 6: end time
         * 9: confidence score of being the class indicated in the column 11
         * 10: confidence score of being action/non-background
-        * 11: the predicted action class (from the 20 action classes and the background)
+        * 11: the predicted action class (from the 20 action classes [index 1-20] and the background [index 0])
         * 12: sliding window overlap. all 0.25. means using 75% overlap window.
     - Note for the meaning of `res`: 
         * this matrix represents the confidence score on each frame per each class
