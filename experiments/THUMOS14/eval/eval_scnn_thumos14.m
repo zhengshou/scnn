@@ -20,7 +20,7 @@ subset = 'test';
 
 for threshold = 0.1:0.1:0.5
 
-    load('../network_localization/res_seg_swin.mat');
+    load('../network_localization/result/res_seg_swin.mat');
     seg_swin=seg_swin(seg_swin(:,11)~=0,:);
 
     % adjust conf via the distribution of window length
