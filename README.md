@@ -6,7 +6,8 @@ By Zheng Shou, Dongang Wang, and Shih-Fu Chang.
 
 Segment-CNN (S-CNN) is a segment-based deep learning framework for temporal action localization in untrimmed long videos.
 
-This code has been tested on Ubuntu 14.04 with NVIDIA GTX 980.
+This code has been tested on Ubuntu 14.04 with NVIDIA GTX 980 of 4GB memory for models based on C3D-v1.0 and tested with NVIDIA Titan
+X GPU of 12GB memory for models based on C3D-v1.1.
 
 Current code suffices to run demo, repeat our experimental results, and train your own models. Please use "Issues" to ask questions or report bugs. Thanks.
 
@@ -46,7 +47,7 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
     - Compile C3D_sample_rate, which is used for the proposal network and classification network
     - Compile C3D_overlap_loss, which is used for the localization network
     - Hint: please refer to [C3D-v1.0](https://github.com/facebook/C3D/tree/master/C3D-v1.0), [C3D-v1.1](https://github.com/facebook/C3D/tree/master/C3D-v1.1), and [Caffe](https://github.com/BVLC/caffe) for more details about compilation
-2. Download pre-trained models to `./models/`: either from [Dropbox](https://www.dropbox.com/s/657cuo60xg41zln/models.7z?dl=0) or [Baiduyun](http://pan.baidu.com/s/1o8AHrUa)
+2. Download pre-trained models to `./models/` from [Dropbox](https://www.dropbox.com/s/01o0o74w5jsxzjo/models.7z?dl=0)
 
 ### Run demo:
 0. change to demo directory: `cd ./demo/`.
@@ -116,4 +117,4 @@ A. Karpathy, G. Toderici, S. Shetty, T. Leung, R. Sukthankar, and L. Fei-Fei, La
         * format: video_frame_directory start_frame_index class_label stepsize overlap
         * overlap: the overlap measured by IoU between the candidate segment and the corresponding ground truth segment
         * example: `/dataset/THUMOS14/val/validation_frm_all/video_validation_0000051/ 2561 3 8 0.70701`
-2. NOTE: please refer to [C3D-v1.1](https://github.com/facebook/C3D/tree/master/C3D-v1.1) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model.
+2. NOTE: please refer to [C3D-v1.1](https://github.com/facebook/C3D/tree/master/C3D-v1.1) and [Caffe](https://github.com/BVLC/caffe) for more general instructions about how to train 3D CNN model. Res3D uses 8 frames for each clip to produce one label. Because S-CNN samples 16 frames out of multi-scale temporal window which can be up to 512 frames long, we still keep 16 frames for each clip in S-CNN.
