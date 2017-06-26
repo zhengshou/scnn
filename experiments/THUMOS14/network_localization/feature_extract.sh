@@ -1,1 +1,1 @@
-GLOG_logtosterr=1 ../../../C3D_overlap_loss/build/tools/extract_image_features.bin feature_extract.prototxt snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000 0 20 28192 list_test_prefix_localization_proposalscore07.lst prob 2>extract.log
+GLOG_logtosterr=1 ../../../C3D-v1.0/C3D_overlap_loss/build/tools/extract_image_features.bin feature_extract.prototxt snapshot/SCNN_uniform16_cls20_with_overlap_loss_iter_30000 0 20 28192 list_test_prefix_localization_proposalscore07.lst prob 2>extract.log

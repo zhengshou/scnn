@@ -1,0 +1,16 @@
+net: "train_resnet18_r2.prototxt"
+test_interval: 0
+base_lr: 0.001
+momentum: 0.9
+weight_decay: 0.00005
+lr_policy: "step"
+gamma: 0.5
+stepsize: 6846
+# Display every 20 iterations
+display: 20
+# The maximum number of iterations
+max_iter: 27384
+# snapshot intermediate results
+snapshot: 6846
+snapshot_prefix: "snapshot/c3d_resnet18_sports1m_r2"
+solver_mode: GPU

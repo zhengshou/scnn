@@ -1,0 +1,1 @@
+GLOG_logtosterr=1 ../../../C3D-v1.1/C3D_overlap_loss/build/tools/extract_image_features.bin xfeat_resnet18_r2.prototxt snapshot/c3d_resnet18_sports1m_r2_iter_14704.caffemodel 0 20 28192 list_test_prefix_localization_proposalscore07.lst prob 2>&1 | tee log.xfeat
