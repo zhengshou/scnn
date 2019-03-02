@@ -9,7 +9,7 @@ Segment-CNN (S-CNN) is a segment-based deep learning framework for temporal acti
 This code has been tested on Ubuntu 14.04 with NVIDIA GTX 980 of 4GB memory for models based on C3D-v1.0 and tested with NVIDIA Titan
 X GPU of 12GB memory for models based on C3D-v1.1.
 
-Current code suffices to run demo, repeat our experimental results, and train your own models. Please use "Issues" to ask questions or report bugs. Thanks. [Mar. 2019: we stop maintaining new issues for this repository because many people have successfully reproduced our results and most common questions have been addressed in the closed issues.]
+Current code suffices to run demo, repeat our experimental results, and train your own models. Please use "Issues" to ask questions or report bugs. Thanks. [ Mar. 2019: we stop maintaining new issues for this repository because many people have successfully reproduced our results and most common questions have been raised and addressed in the closed issues. ]
 
 ### License
 
